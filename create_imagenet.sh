@@ -7,8 +7,8 @@ EXAMPLE=/home/roy/end-to-end-car-caffe/fornewdataset
 LABEL=/home/roy/end-to-end-car-caffe/fornewdataset
 TOOLS=/home/roy/caffe/build/tools
 
-TRAIN_DATA_ROOT=/home/roy/end-to-end-car-caffe/fornewdataset/train/
-VAL_DATA_ROOT=/home/roy/end-to-end-car-caffe/fornewdataset/val/
+TRAIN_DATA_ROOT=/home/roy/end-to-end-car-caffe/fornewdataset/crop_train/
+VAL_DATA_ROOT=/home/roy/end-to-end-car-caffe/fornewdataset/crop_val/
 
 # Set RESIZE=true to resize the images to 256x256. Leave as false if images have
 # already been resized using another tool.

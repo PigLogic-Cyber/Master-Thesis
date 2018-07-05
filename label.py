@@ -13,7 +13,7 @@ name = data2[:, 0]
 
 
 threshold = 0.3
-max_index = 20
+max_index = 100
 min_index = 0
 
 
@@ -24,19 +24,21 @@ def mapfun(x):
     if x > 0:
         if x > abs(min_angle):
             y = max_index
-        #     y = max_index
         else:
-            if x/((max_angle-min_angle)/2) >threshold:
+            if x/(abs(min_angle)) >threshold:
+
                 y = max_index - 1
             else:
                 y = round((x)/(abs(min_angle*threshold))*(max_index-min_index-6)/2+(max_index-min_index)/2)
     if x < 0:
         if (x)/(min_angle) > threshold:
-            y = min_index
+            y = min_index 
         else:
             y = round(abs(x-min_angle*threshold)/abs(min_angle*threshold)*(max_index-min_index-4)/2) + 1
     if x == 0:
         y = round((max_index-min_index)/2)
+
+
     return (y)
 
 

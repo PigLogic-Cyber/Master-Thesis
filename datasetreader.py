@@ -45,24 +45,25 @@ for pic_name in name:
     temp_angle = angle[n].astype('float')
     if temp_angle == 0:
         zero_num = zero_num + 1
-        if zero_num % 10 == 0:
-            if zero_num % 4 != 0:
-                train_file.write(file_list + ' ' + angle[n] + '\n')
-                train_pic = os.path.join(train_path, pic_name)
-                open(train_pic, "wb").write(open(file_list, "rb").read())
-            else:
-                val_file.write(file_list + ' ' + angle[n] + '\n')
-                val_pic = os.path.join(val_path, pic_name)
-                open(val_pic, "wb").write(open(file_list, "rb").read())
+        # if zero_num % 10 == 0:
+        if zero_num % 8 != 0:
+            train_file.write(file_list + ' ' + angle[n] + '\n')
+            train_pic = os.path.join(train_path, pic_name)
+            open(train_pic, "wb").write(open(file_list, "rb").read())
+        else:
+            val_file.write(file_list + ' ' + angle[n] + '\n')
+            val_pic = os.path.join(val_path, pic_name)
+            open(val_pic, "wb").write(open(file_list, "rb").read())
     else:
         nonzero_num = nonzero_num + 1
         if nonzero_num % 8 == 0:
             val_file.write(file_list + ' ' + angle[n] + '\n')
             val_pic = os.path.join(val_path, pic_name)
             open(val_pic, "wb").write(open(file_list, "rb").read())
-        train_file.write(file_list + ' ' + angle[n] + '\n')
-        train_pic = os.path.join(train_path, pic_name)
-        open(train_pic, "wb").write(open(file_list, "rb").read())
+        else:
+            train_file.write(file_list + ' ' + angle[n] + '\n')
+            train_pic = os.path.join(train_path, pic_name)
+            open(train_pic, "wb").write(open(file_list, "rb").read())
 
 
 

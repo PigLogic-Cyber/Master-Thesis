@@ -42,8 +42,8 @@ mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape(
 
 
 #Read model architecture and trained model's weights
-net = caffe.Net('/home/roy/end-to-end-car-caffe/fornewdataset/pilotnet_deploy.prototxt',
-                '/home/roy/end-to-end-car-caffe/fornewdataset/snapshot/pilotnet_iter_10000.caffemodel',
+net = caffe.Net('/home/roy/end-to-end-car-caffe/fornewdataset/pilotnet_deploy_s_drop01.prototxt',
+                '/home/roy/end-to-end-car-caffe/fornewdataset/snapshot/s_dropout01_20000.caffemodel',
                 caffe.TEST)
 
 #Define image transformers
@@ -55,7 +55,7 @@ transformer.set_transpose('data', (2,0,1))
 Making predicitions
 '''
 #Reading image paths
-test_img_paths = [img_path for img_path in glob.glob("/home/roy/end-to-end-car-caffe/fornewdataset/val/*jpg")]
+test_img_paths = [img_path for img_path in glob.glob("/home/roy/end-to-end-car-caffe/fornewdataset/crop_val/*jpg")]
 
 #Making predictions
 test_ids = []

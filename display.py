@@ -34,7 +34,7 @@ print('row2 {},col2 {}'.format(row2, col2))
 angle2 = data2[1:row2, 1].astype('float')
 
 f2 = plt.figure(2)
-plt.hist(angle2, bins=np.arange(0, 20, 1))
+plt.hist(angle2, bins=np.arange(0, 101, 1))
 
 
 
@@ -42,7 +42,7 @@ data2 = np.loadtxt('val.txt', delimiter=' ', dtype='str')
 [row2, col2] = data2.shape
 print('row2 {},col2 {}'.format(row2, col2))
 angle2 = data2[1:row2, 1].astype('float')
-plt.hist(angle2, bins=np.arange(0, 20, 1))
+plt.hist(angle2, bins=np.arange(0, 101, 1))
 plt.title("labeled train val angle Histogram")
 plt.xlabel("label")
 plt.ylabel("Frequency")
